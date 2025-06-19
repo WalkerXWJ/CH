@@ -1,0 +1,1 @@
+ pyinstaller --windowed --name "CH" --icon="Icon.icns" --exclude PyQt5 clipboard_history.py
