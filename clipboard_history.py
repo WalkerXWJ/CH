@@ -130,7 +130,7 @@ class SortDialog(QDialog):
         # 排序选项
         self.sort_combo = QComboBox()
         self.sort_combo.addItems([
-            "按修改时间(最就在前)", 
+            "按修改时间(最旧在前)", 
             "按修改时间(最新在前)", 
             "按复制次数(最多在前)"
         ])
@@ -412,7 +412,7 @@ class ClipboardHistoryWindow(QMainWindow):
         self.setup_clipboard_monitor()
         self.load_history()
         self.load_settings()
-        
+    
         self.update_clear_button_visibility()
         self.update_style()
     
@@ -925,12 +925,26 @@ class ClipboardHistoryWindow(QMainWindow):
         return False
     
     def clear_clipboard_history(self):
-        """清除剪贴板历史"""
-        self.clipboard_history = []
-        self.pinned_items = []
-        self.update_history_display()
-        self.update_clear_button_visibility()
-        self.save_history()
+        """清除剪贴板历史（保留被钉住的项目）"""
+        # 确认对话框
+        reply = QMessageBox.question(
+            self, '确认清除',
+            '确定要清除所有未被固定的剪贴板历史吗?',
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        
+        if reply == QMessageBox.StandardButton.Yes:
+            # 只清除未被钉住的项目
+            self.clipboard_history = [item for item in self.clipboard_history if item[4]]  # 只保留固定项目
+            
+            # 更新显示
+            self.update_history_display()
+            self.update_clear_button_visibility()
+            self.save_history()
+            
+            # 显示清除完成提示
+            self.show_message("已清除未被固定的历史记录", 2000)
     
     def update_style(self):
         """更新窗口样式"""
