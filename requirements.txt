@@ -1,0 +1,25 @@
+# 核心依赖
+PyQt6==6.9.1
+PyQt6-Qt6==6.9.1
+PyQt6-sip==13.10.2  # 开发工具（可选）
+
+# 剪贴板与图像处理
+pyperclip==1.9.0
+Pillow==11.2.1     # PIL 图像处理库
+
+# macOS 原生集成
+pyobjc-framework-Cocoa==11.1
+
+# 打包工具
+pyinstaller==6.14.1  # 应用打包
+pyinstaller-hooks-contrib==2025.5
+macholib==1.16.3
+altgraph==0.17.4
+
+# 开发辅助
+python-dotenv==1.1.0  # 环境变量管理（可选）
+black==25.1.0 
+click==8.2.1 
+mypy-extensions==1.1.0 
+pathspec==0.12.1
+pylint==3.3.7        # 代码检查
