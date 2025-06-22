@@ -3,6 +3,7 @@
 ![mac](https://img.shields.io/badge/适用于-MAC-red) 
 # CH ｜ Clipboard History ｜ 粘贴板历史
 ## 简介
+<img src="./images/ch-0.png" title="" alt="" width="400">
 CH是一个免费简单易用的粘贴板历史记录和管理工具，工具没有隐私声明，因为此工具获取的所有粘贴板工具，都存储在用户本地。
 
 ---
