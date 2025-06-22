@@ -48,5 +48,6 @@ pip install -r requirements.txt
  pyinstaller --windowed --name "CH" --icon="Icon.icns" --exclude PyQt5 clipboard_history.py
 ```
 ### 4.将`CH.app`移动到`/Applications/`目录
-[](./images/ch.png)
+<img src="./images/ch.png" title="" alt="" width="400">
+
 启动台点击启动应用即可。
