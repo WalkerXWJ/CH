@@ -26,11 +26,11 @@ from Cocoa import NSApplication, NSApp
 import pyperclip
 
 # 常量定义
-MAX_HISTORY_ITEMS = 100
-ITEM_HEIGHT = 100
-MARGIN = 10  # 统一边距
+MAX_HISTORY_ITEMS = 100  # 历史记录中保存的最大项目数量
+ITEM_HEIGHT = 100  # 每个历史记录项的高度(像素)
+MARGIN = 10  # 统一边距(像素)
 CLIPBOARD_CHECK_INTERVAL = 0.5  # 剪贴板检查间隔(秒)
-DEFAULT_OPACITY = 80  # 默认透明度百分比
+DEFAULT_OPACITY = 80  # 窗口默认透明度百分比(0-100)
 
 class AboutDialog(QDialog):
     """关于对话框"""
